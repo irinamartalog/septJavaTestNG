@@ -13,7 +13,7 @@ public class Annotations {
         System.out.println("in test case 2");
     }
 
-    BeforeMethod
+    @BeforeMethod
     public void beforeMethod() {
         System.out.println("in beforeMethod");
     }
