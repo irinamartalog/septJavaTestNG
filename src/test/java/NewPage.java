@@ -30,7 +30,9 @@ public void afterSuit(){
     }
 
     private void goBackOnePage() {
-        driver.navigate().back();
+
+    driver.navigate().back();
+
     }
 
     private void submitResultElement() {
