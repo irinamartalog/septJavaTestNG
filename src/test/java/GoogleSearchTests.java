@@ -31,7 +31,7 @@ public class GoogleSearchTests {
 
 
             openBrowser();
-            navigateToMainMenu();
+            navigateToMainPage();
             typeQuory();
             submitSearch();
             assertResulstPage();
@@ -70,7 +70,7 @@ public class GoogleSearchTests {
        webElement.sendKeys("Portnov computer school");
     }
 
-    private void navigateToMainMenu() {
+    private void navigateToMainPage() {
         String url = "https:/www.google.com";
         driver.get(url);
     }
