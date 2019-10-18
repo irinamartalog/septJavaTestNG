@@ -10,10 +10,10 @@ public class NewPage {
     WebDriver driver;
     String url = "https://the-internet.herokuapp.com/";
 
-@AfterSuite
-public void afterSuit(){
+/*@AfterSuite
+public void afterSuite(){
     driver.quit();
-}
+}*/
 
     @Test
     public void testMyFirtsOne() {
@@ -21,7 +21,7 @@ public void afterSuit(){
 
         openBrowser();
         navigateToMainPage();
-        fingElement();
+        findElement();
         submitResultElement();
         assertResultPage();
         goBackOnePage();
@@ -47,7 +47,7 @@ public void afterSuit(){
     }
 
 
-    private void fingElement() {
+    private void findElement() {
         String selector = "#content > ul:nth-child(4) > li:nth-child(1) > a:nth-child(1)";
         driver.findElement(By.cssSelector(selector));
     }
