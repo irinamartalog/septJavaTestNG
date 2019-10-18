@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
@@ -15,6 +16,10 @@ public class CheckBoxesTest {
     String checkBox1 = " #checkboxes > input:nth-child(1)";
     String checkBox2 = "#checkboxes > input:nth-child(3)";
 
+    @AfterSuite
+     public void afterSuite(){
+     driver.quit();
+    }
 
     @Test
     public void test0001() {
@@ -43,7 +48,7 @@ public class CheckBoxesTest {
         List<WebElement> elements = driver.findElements(By.tagName("input"));
         int numberOfElements = elements.size();
         Assert.assertTrue(numberOfElements == 2);
-        WebElement checkBox1 = elements.get(0);
+        /*WebElement checkBox1 = elements.get(0);
         WebElement checkBox2 = elements.get(1);
         boolean isDisplayedCheckBox1 = checkBox1.isDisplayed();
         Assert.assertTrue(isDisplayedCheckBox1);
@@ -57,8 +62,8 @@ public class CheckBoxesTest {
         String checkBox2Value = checkBox2.getAttribute("checked");
         if (checkBox2Value == null) {
             checkBox2.click();
-        }
-*/
+        */}
+
 
         private void navigateToCheckBoxesPage ()
     {
