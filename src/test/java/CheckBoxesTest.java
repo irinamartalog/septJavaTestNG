@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class CheckBoxesTest {
     WebDriver driver;
@@ -27,16 +28,16 @@ public class CheckBoxesTest {
 
         openBrowser();
         navigateToCheckBoxesPage();
-        driverFindElements();
+        findCheckBoxesElementOnPage();
         clickOnFirstCheckbox();
         unclickOnSecondCheckbox();
     }
 
 
-
     private void unclickOnSecondCheckbox() {
 
         driver.findElement(By.cssSelector(checkBox2)).click();
+
     }
 
     private void clickOnFirstCheckbox() {
@@ -44,25 +45,13 @@ public class CheckBoxesTest {
         driver.findElement(By.cssSelector(checkBox1)).click();
     }
 
-    private void driverFindElements() {
+
+
+    private void findCheckBoxesElementOnPage() {
         List<WebElement> elements = driver.findElements(By.tagName("input"));
         int numberOfElements = elements.size();
         Assert.assertTrue(numberOfElements == 2);
-        /*WebElement checkBox1 = elements.get(0);
-        WebElement checkBox2 = elements.get(1);
-        boolean isDisplayedCheckBox1 = checkBox1.isDisplayed();
-        Assert.assertTrue(isDisplayedCheckBox1);
-        boolean isDisplayedCheckBox2 = checkBox2.isDisplayed();
-        Assert.assertTrue(isDisplayedCheckBox2);
     }
-       /* String checkBox1Value = checkBox1.getAttribute("checked");
-        if (checkBox1Value == null) {
-            checkBox1.click();
-        }
-        String checkBox2Value = checkBox2.getAttribute("checked");
-        if (checkBox2Value == null) {
-            checkBox2.click();
-        */}
 
 
         private void navigateToCheckBoxesPage ()
@@ -75,5 +64,6 @@ public class CheckBoxesTest {
     {
             driver = new FirefoxDriver();
         }
-    }
+
+}
 
