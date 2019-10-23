@@ -12,10 +12,13 @@ public class BingSearchTests {
 
         openBrowser();
         navigateToMainPage();
-       // findElementInThePage();
+        findElementInThePage();
         //typeQuory();
        // submitTypedQuory();
         }
+
+    private void findElementInThePage() {
+    }
 
     private void navigateToMainPage() {
         String url = "https://www.bing.com";
