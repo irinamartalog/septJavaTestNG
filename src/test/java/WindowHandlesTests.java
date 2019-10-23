@@ -47,7 +47,6 @@ public void afterMethod (){
         String handle1 = (String) arrayOfHandles[0];
         String handle2 = (String) arrayOfHandles[1];
         driver.switchTo().window(handle2);
-
     }
 
 
