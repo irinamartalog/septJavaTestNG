@@ -13,9 +13,9 @@ public class WindowHandlesTests {
     WebDriver driver;
     WebElement link;
 
-@AfterMethod
-public void afterMethod (){
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+     @AfterMethod
+     public void afterMethod (){
+         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 }
 
     @Test
@@ -29,9 +29,8 @@ public void afterMethod (){
         assertResultElementOnPage();
         windowHandlesSize();
         switchToWindowHandle1();
-        assertWindowHandle2Result();
         switchToWindowHandle2();
-
+        assertWindowHandle2Result();
     }
 
     private void assertWindowHandle2Result() {
@@ -51,7 +50,6 @@ public void afterMethod (){
 
 
 
-
     private void switchToWindowHandle1() {
         Object[] arrayOfHandles = driver.getWindowHandles().toArray();
         String handle1 = (String) arrayOfHandles[0];
@@ -68,7 +66,7 @@ public void afterMethod (){
 
     private void assertResultElementOnPage() {
        WebElement link =  driver.findElement(By.linkText("Click Here"));
-       String actualHrefValue = link.getAttribute("href");
+        String actualHrefValue = link.getAttribute("href");
         String expectedHrefValue = "http://the-internet.herokuapp.com/windows/new";
         Assert.assertEquals(actualHrefValue,expectedHrefValue);
         link.click();
@@ -88,6 +86,6 @@ public void afterMethod (){
     private void openBrowser() {
 
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }

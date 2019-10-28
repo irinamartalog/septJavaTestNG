@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+
+
+ <suite name="AirBnbTestsSuite" verbose="1">
+      <test name="AirBnbTestsPozitiveTests">
+          <classes>
+              <class name="AirBnbTests">
+                  <methods>
+                      <include name="First"/>
+                  </methods>
+              </class>
+          </classes>
+      </test>
+</suite>
+
+
+
